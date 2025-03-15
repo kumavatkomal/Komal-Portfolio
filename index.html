@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komal Kumavat - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+       <!-- Navbar -->
+       <nav class="bg-purple-700 text-white fixed w-full shadow-md z-50">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <!-- Logo -->
+            <h1 class="text-2xl font-bold">Komal Kumavat</h1>
+
+            <!-- Menu (Desktop) -->
+            <ul class="hidden md:flex space-x-6 text-lg">
+                <li><a href="#about" class="hover:text-gray-300 transition duration-300">About</a></li>
+                <li><a href="#skills" class="hover:text-gray-300 transition duration-300">Skills</a></li>
+                <li><a href="#projects" class="hover:text-gray-300 transition duration-300">Projects</a></li>
+                <li><a href="#contact" class="hover:text-gray-300 transition duration-300">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden focus:outline-none">
+                <svg class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden flex flex-col bg-purple-800 text-center py-4 md:hidden">
+            <a href="#about" class="block text-lg text-white hover:text-gray-300 transition duration-300">About</a>
+            <a href="#skills" class="block text-lg text-white hover:text-gray-300 transition duration-300">Skills</a>
+            <a href="#projects" class="block text-lg text-white hover:text-gray-300 transition duration-300">Projects</a>
+            <a href="#contact" class="block text-lg text-white hover:text-gray-300 transition duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-purple-600 to-indigo-800 text-white py-32">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-center text-center md:text-left">
+            
+            <!-- Left Side - Typing Animation -->
+            <div class="md:w-1/2 px-6">
+                <h1 class="text-5xl font-bold leading-tight">
+                    <span class="text-white" id="typing-text"></span>
+                    <span class="blinking-cursor">|</span>
+                </h1>
+                <p class="text-xl mt-4 text-gray-300">Aspiring Electrical Engineer | Software Engineer | Competitive Programmer</p>
+                <p class="mt-4 text-lg text-gray-300">Passionate about Embedded Systems, IoT, and Renewable Energy.</p>
+
+                <!-- Resume Button -->
+                <a href="Assets/Komal_CV.pdf" download 
+                   class="mt-6 inline-block px-6 py-3 bg-white text-purple-800 font-bold rounded-full shadow-lg text-lg hover:bg-gray-200 transform hover:scale-105 transition-all duration-300">
+                    📄 Download Resume
+                </a>
+            </div>
+
+            <!-- Right Side - Image -->
+            <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+                <img src="Assests\komal.jpg" alt="Komal Kumavat" 
+                     class="w-60 h-60 md:w-80 md:h-80 rounded-full shadow-2xl border-4 border-white animate-slide-in">
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for Mobile Menu & Typing Animation -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Typing Animation with Cursor Effect
+        const text = "I am Komal Kumavat";
+        let index = 0;
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("typing-text").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 150);
+            } else {
+                document.querySelector(".blinking-cursor").style.display = "none"; // Hide cursor after typing
+            }
+        }
+        window.onload = typeEffect;
+    </script>
+
+    <!-- Animations & Cursor Styling -->
+    <style>
+        /* Typing Cursor Effect */
+        .blinking-cursor {
+            font-size: 48px;
+            color: white;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        @keyframes slide-in {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .animate-slide-in { animation: slide-in 1s ease-in-out; }
+    </style>
+
+
+
+
+           <!-- About Me Section -->
+    <section id="about" class="py-20 bg-white text-gray-900">
+        <div class="container mx-auto max-w-5xl text-center">
+            <!-- Heading -->
+            <h2 class="text-4xl font-bold tracking-wide animate-fade-in text-gray-800">About Me</h2>
+
+            <!-- Description -->
+            <p class="mt-6 text-lg animate-slide-up text-gray-700 leading-relaxed">
+                Hello! I'm <b>Komal Kumavat</b>, an aspiring Electrical Engineer passionate about 
+                <b>Embedded Systems, IoT, and Renewable Energy</b>. 
+                Currently pursuing my <b>B.Tech in Electrical Engineering</b> from 
+                <b>R.C. Patel Institute of Technology, Shirpur</b>.
+            </p>
+
+            <!-- Education Section -->
+            <div class="mt-10">
+                <h3 class="text-2xl font-semibold text-gray-800 animate-fade-in">Education</h3>
+
+                <div class="mt-6 grid gap-6 md:grid-cols-3 animate-slide-up">
+                    <!-- Qualification 1 -->
+                    <div class="p-6 border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                        <h4 class="text-lg font-semibold text-gray-800">🎓 B.Tech in Electrical Engineering</h4>
+                        <p class="text-gray-600 mt-2">2022 – 2026</p>
+                        <p class="text-gray-600">CGPA: 8.7</p>
+                    </div>
+
+                    <!-- Qualification 2 -->
+                    <div class="p-6 border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                        <h4 class="text-lg font-semibold text-gray-800">🏫 HSC - Rashtriya Vidyalaya Jr. College</h4>
+                        <p class="text-gray-600 mt-2">2020 – 2022</p>
+                        <p class="text-gray-600">Score: 70.17%</p>
+                    </div>
+
+                    <!-- Qualification 3 -->
+                    <div class="p-6 border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                        <h4 class="text-lg font-semibold text-gray-800">📖 SSC - Rashtriya Kanya School</h4>
+                        <p class="text-gray-600 mt-2">2019 – 2020</p>
+                        <p class="text-gray-600">Score: 92.40%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animations -->
+    <style>
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slide-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fade-in 1s ease-in-out; }
+        .animate-slide-up { animation: slide-up 1s ease-in-out; }
+    </style>
+
+    
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="container mx-auto max-w-5xl text-center">
+            <h2 class="text-4xl font-bold text-gray-800 animate-fade-in">Skills</h2>
+
+            <!-- Technical Skills -->
+            <h3 class="text-2xl font-semibold text-gray-700 mt-6 animate-slide-up">Technical Skills</h3>
+            <div class="flex flex-wrap justify-center mt-6 gap-4 animate-fade-in">
+                <span class="skill-badge">⚡ Electrical Circuit Design</span>
+                <span class="skill-badge">🔧 MATLAB & Simulink</span>
+                <span class="skill-badge">🤖 Embedded Systems</span>
+                <span class="skill-badge">🎛 Microcontroller Programming</span>
+                <span class="skill-badge">🌍 IoT Applications</span>
+                <span class="skill-badge">⚡ Renewable Energy Systems</span>
+                <span class="skill-badge">🖥 Keil & Embedded C</span>
+                <span class="skill-badge">📐 Electrical CAD</span>
+                <span class="skill-badge">☕ Java Programming</span>
+            </div>
+
+            <!-- Soft Skills -->
+            <h3 class="text-2xl font-semibold text-gray-700 mt-12 animate-slide-up">Soft Skills</h3>
+            <div class="flex flex-wrap justify-center mt-6 gap-4 animate-fade-in">
+                <span class="skill-badge bg-green-200 text-green-800">💡 Problem-Solving</span>
+                <span class="skill-badge bg-green-200 text-green-800">🤝 Teamwork</span>
+                <span class="skill-badge bg-green-200 text-green-800">🎯 Leadership</span>
+                <span class="skill-badge bg-green-200 text-green-800">🗣 Communication</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animations & Styles -->
+    <style>
+        /* Skill Badge Style */
+        .skill-badge {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #6b46c1, #9f7aea);
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover Effect */
+        .skill-badge:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Fade-In Animation */
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Slide-Up Animation */
+        @keyframes slide-up {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Apply Animations */
+        .animate-fade-in { animation: fade-in 1s ease-in-out; }
+        .animate-slide-up { animation: slide-up 1s ease-in-out; }
+    </style>
+
+
+          <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container mx-auto max-w-6xl text-center">
+            <h2 class="text-4xl font-bold text-gray-800 animate-fade-in">Projects</h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mt-12 animate-slide-up">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="images/project1.jpg" alt="Auto Human Night Light" class="project-image">
+                    <div class="project-info">
+                        <h3 class="text-2xl font-semibold">Auto Human Night Light Control System</h3>
+                        <p>Automated lighting system using motion sensors to reduce energy wastage by 30%.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="images/project2.jpg" alt="Automatic Plant Irrigation" class="project-image">
+                    <div class="project-info">
+                        <h3 class="text-2xl font-semibold">Automatic Plant Irrigation System</h3>
+                        <p>Microcontroller-based system optimizing water usage based on real-time soil moisture data.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="images/project3.jpg" alt="Solar & Wind Tracking" class="project-image">
+                    <div class="project-info">
+                        <h3 class="text-2xl font-semibold">Integration of Solar & Wind Tracking System</h3>
+                        <p>Hybrid renewable system that increased energy output by 25% with optimized tracking.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <img src="images/project4.jpg" alt="AI-Driven Fault Detection" class="project-image">
+                    <div class="project-info">
+                        <h3 class="text-2xl font-semibold">AI-Driven Fault Detection in Electrical Drives</h3>
+                        <p>AI-based predictive fault detection system for electrical drives using machine learning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animations & Styling -->
+    <style>
+        /* Project Card Styles */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .project-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .project-info h3 {
+            color: #4a4a4a;
+            margin-bottom: 8px;
+        }
+
+        .project-info p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Animations */
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slide-up {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in { animation: fade-in 1s ease-in-out; }
+        .animate-slide-up { animation: slide-up 1s ease-in-out; }
+    </style>
+
+
+                <!-- Achievements Section -->
+    <section id="achievements" class="py-20 bg-white">
+        <div class="container mx-auto max-w-5xl text-center">
+            <h2 class="text-4xl font-bold text-gray-800 animate-fade-in">🏅 Achievements</h2>
+
+            <div class="grid md:grid-cols-3 gap-8 mt-12 animate-slide-up">
+                <!-- Achievement 1 -->
+                <div class="achievement-card">
+                    <div class="icon">🏆</div>
+                    <h3 class="text-xl font-semibold">First Rank - Electric Toy Making Competition</h3>
+                    <p>
+                        Won 1st place at <b>Converges 2025-26</b> (RCPIT Shirpur) for creating a 
+                        <b>Dancing and Musical Doll</b> showcasing electrical automation.
+                    </p>
+                </div>
+
+                <!-- Achievement 2 -->
+                <div class="achievement-card">
+                    <div class="icon">🏆</div>
+                    <h3 class="text-xl font-semibold">First Rank - Electro Toy Making Competition</h3>
+                    <p>
+                        Secured 1st place at <b>Converges 2024</b> (RCPIT Shirpur) by developing an 
+                        innovative electrical toy using IoT and automation, outperforming 50+ teams.
+                    </p>
+                </div>
+
+                <!-- Achievement 3 -->
+                <div class="achievement-card">
+                    <div class="icon">🎓</div>
+                    <h3 class="text-xl font-semibold">Infosys Pragati Path to Future Program</h3>
+                    <p>
+                        Successfully completed a <b>3-month industry-focused program</b> covering 
+                        Software Development, Corporate Communication, and Leadership Skills.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animations & Styling -->
+    <style>
+        /* Achievement Card Styling */
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        /* Hover Effects */
+        .achievement-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Icon Styling */
+        .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        /* Fade-In Animation */
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Slide-Up Animation */
+        @keyframes slide-up {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Apply Animations */
+        .animate-fade-in { animation: fade-in 1s ease-in-out; }
+        .animate-slide-up { animation: slide-up 1s ease-in-out; }
+    </style>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h2 class="text-3xl font-bold text-blue-600">Contact Me</h2>
+                <p class="mt-4 text-lg text-gray-700">Feel free to reach out to me!</p>
+    
+                <!-- Contact Information -->
+                <div class="mt-6 space-y-4">
+                    <p class="text-gray-700"><b>Email:</b> <a href="mailto:komalkumavat025@gmail.com" class="text-blue-600 hover:underline">komalkumavat025@gmail.com</a></p>
+                    <p class="text-gray-700"><b>Phone:</b> <a href="tel:+919860690939" class="text-blue-600 hover:underline">+91-9860690939</a></p>
+                    <p class="text-gray-700"><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/komal-kumavat-44a550264" target="_blank" class="text-blue-600 hover:underline">LinkedIn Profile</a></p>
+                </div>
+    
+                <!-- Contact Form -->
+                <form class="mt-8 bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-lg mb-2">Name</label>
+                        <input type="text" class="w-full p-3 border rounded-lg" placeholder="Your Name">
+                    </div>
+    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-lg mb-2">Email</label>
+                        <input type="email" class="w-full p-3 border rounded-lg" placeholder="Your Email">
+                    </div>
+    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-lg mb-2">Message</label>
+                        <textarea class="w-full p-3 border rounded-lg" rows="4" placeholder="Your Message"></textarea>
+                    </div>
+    
+                    <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg text-lg hover:bg-blue-700">
+                        📩 Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+    
+
+    
+
+
+
+
+</body>
+</html>
