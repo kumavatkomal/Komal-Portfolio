@@ -9,7 +9,6 @@ Check out my portfolio live: **[Click Here](https://your-deployment-link.com)**
 *(Update this link once deployed!)*
 
 ---
-
 ## 📌 About Me
 Hello! I am **Komal Kumavat**, an aspiring **Electrical Engineer**, passionate about **Embedded Systems, IoT, and Renewable Energy**.  
 Currently pursuing my **B.Tech in Electrical Engineering** from **R.C. Patel Institute of Technology, Shirpur**.
